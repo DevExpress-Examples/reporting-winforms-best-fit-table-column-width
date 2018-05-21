@@ -28,11 +28,11 @@ Namespace dxSample
         End Sub
         Private Shared Sub FillColumnCellWidthCollection(ByVal report As XtraReport)
             For Each page As PSPage In report.Pages
-                Dim [iterator] As New NestedBrickIterator(page.InnerBricks)
-                Do While [iterator].MoveNext()
-                    If TypeOf [iterator].CurrentBrick Is VisualBrick AndAlso TypeOf CType([iterator].CurrentBrick, VisualBrick).BrickOwner Is XRTableCell Then
-                        Dim text As String = CType([iterator].CurrentBrick, VisualBrick).Text
-                        Dim cell As XRTableCell = TryCast(CType([iterator].CurrentBrick, VisualBrick).BrickOwner, XRTableCell)
+                Dim iterator As New NestedBrickIterator(page.InnerBricks)
+                Do While iterator.MoveNext()
+                    If TypeOf iterator.CurrentBrick Is VisualBrick AndAlso TypeOf CType(iterator.CurrentBrick, VisualBrick).BrickOwner Is XRTableCell Then
+                        Dim text As String = CType(iterator.CurrentBrick, VisualBrick).Text
+                        Dim cell As XRTableCell = TryCast(CType(iterator.CurrentBrick, VisualBrick).BrickOwner, XRTableCell)
                         Dim actualWidth As Single = report.PrintingSystem.Graph.MeasureString(text).Width
                         Select Case report.ReportUnit
                             Case DevExpress.XtraReports.UI.ReportUnit.HundredthsOfAnInch

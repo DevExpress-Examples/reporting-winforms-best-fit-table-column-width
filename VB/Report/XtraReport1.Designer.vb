@@ -66,8 +66,8 @@
             Me.xrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
             Me.xrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
             Me.xrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
-            DirectCast(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
             ' 
             ' xrTableCell8
             ' 
@@ -262,8 +262,8 @@
             Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() { Me.paramFirstNameMaxLength, Me.paramTitleColumnMaxLength})
             Me.ScriptReferencesString = "DevExpress.XtraEditors.v14.2" & ControlChars.CrLf & "DevExpress.Utils.v14.2"
             Me.Version = "14.2"
-            DirectCast(Me.xrTable1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
         End Sub
 
