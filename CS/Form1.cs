@@ -12,6 +12,7 @@ namespace dxSample {
 
         private void simpleButton1_Click(object sender, EventArgs e) {
             XtraReport report = new XtraReport1();
+	    
             ReportHelper.InitReport(report);
             report.ShowPreview();
         }
