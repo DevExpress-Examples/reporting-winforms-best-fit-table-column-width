@@ -14,6 +14,7 @@ Namespace dxSample
 
         Private Sub simpleButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles simpleButton1.Click
             Dim report As XtraReport = New XtraReport1()
+
             ReportHelper.InitReport(report)
             report.ShowPreview()
         End Sub
