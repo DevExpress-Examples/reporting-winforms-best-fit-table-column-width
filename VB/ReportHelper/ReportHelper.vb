@@ -21,7 +21,7 @@ Namespace dxSample
         '''   true, if the command can be handled; otherwise, false.
         ''' </returns>
         Public Overridable Function CanHandleCommand(ByVal command As PrintingSystemCommand, ByVal printControl As IPrintControl) As Boolean
-            Dim canBeHandled As Boolean = command Is PrintingSystemCommand.ExportXlsx OrElse command Is PrintingSystemCommand.ExportXls OrElse command Is PrintingSystemCommand.ExportCsv
+            Dim canBeHandled As Boolean = (command = PrintingSystemCommand.ExportXlsx) OrElse (command = PrintingSystemCommand.ExportXls) OrElse (command = PrintingSystemCommand.ExportCsv)
             Return canBeHandled
         End Function
 
