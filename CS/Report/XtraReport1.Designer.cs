@@ -127,6 +127,7 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.Text = "xrTableCell1";
             this.xrTableCell1.Weight = 0.11111111111111111D;
+            this.xrTableCell1.WordWrap = false;
             // 
             // xrTableCell2
             // 
