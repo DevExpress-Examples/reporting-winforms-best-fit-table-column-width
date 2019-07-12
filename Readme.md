@@ -6,7 +6,7 @@
 * [XtraReport1.cs](./CS/Report/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/Report/XtraReport1.vb))
 * **[ReportHelper.cs](./CS/ReportHelper/ReportHelper.cs) (VB: [ReportHelper.vb](./VB/ReportHelper/ReportHelper.vb))**
 <!-- default file list end -->
-# Table Report - How to resize report columns to best fit the full contents of cells
+# Table Report - How to resize report columns to best fit cells' content
 
 
 <p>To implement the best fit column functionality for <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTable">XRTable</a>, you should use the following approach. <br /></p>
