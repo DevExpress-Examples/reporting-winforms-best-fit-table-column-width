@@ -13,20 +13,7 @@ namespace dxSample
     {
         private const float AdditionalCellWidth = 0;
 
-        private static Dictionary<XRControl, float> cellColumnWidthCollection;
-        /// <summary>
-        /// Indicates whether or not the specified Printing System command can be handled.
-        /// </summary>
-        /// <param name="command">A <see cref="T:DevExpress.XtraPrinting.PrintingSystemCommand" /> enumeration value.</param>
-        /// <param name="printControl">An object implementing the <see cref="T:DevExpress.XtraPrinting.IPrintControl" /> interface (typically, this is a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl" /> instance).</param>
-        /// <returns>
-        ///   true, if the command can be handled; otherwise, false.
-        /// </returns>
-        public virtual bool CanHandleCommand(PrintingSystemCommand command, IPrintControl printControl)
-        {
-            bool canBeHandled = command == PrintingSystemCommand.ExportXlsx || command == PrintingSystemCommand.ExportXls || command == PrintingSystemCommand.ExportCsv;
-            return canBeHandled;
-        }
+        private static Dictionary<XRControl, float> cellColumnWidthCollection;       
 
         public DevExpress.XtraReports.UI.XtraReport CreateReportWithAutoCellWidth(DevExpress.XtraReports.UI.XtraReport xtraReport)
         {

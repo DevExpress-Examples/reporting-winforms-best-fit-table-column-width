@@ -12,19 +12,6 @@ Namespace dxSample
         Private Const AdditionalCellWidth As Single = 0
 
         Private Shared cellColumnWidthCollection As Dictionary(Of XRControl, Single)
-        ''' <summary>
-        ''' Indicates whether or not the specified Printing System command can be handled.
-        ''' </summary>
-        ''' <param name="command">A <see cref="T:DevExpress.XtraPrinting.PrintingSystemCommand" /> enumeration value.</param>
-        ''' <param name="printControl">An object implementing the <see cref="T:DevExpress.XtraPrinting.IPrintControl" /> interface (typically, this is a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl" /> instance).</param>
-        ''' <returns>
-        '''   true, if the command can be handled; otherwise, false.
-        ''' </returns>
-        Public Overridable Function CanHandleCommand(ByVal command As PrintingSystemCommand, ByVal printControl As IPrintControl) As Boolean
-            Dim canBeHandled As Boolean = command Is PrintingSystemCommand.ExportXlsx OrElse command Is PrintingSystemCommand.ExportXls OrElse command Is PrintingSystemCommand.ExportCsv
-            Return canBeHandled
-        End Function
-
         Public Function CreateReportWithAutoCellWidth(ByVal xtraReport As DevExpress.XtraReports.UI.XtraReport) As DevExpress.XtraReports.UI.XtraReport
             ' I need this for a later excel-export to simulate endless paper (all report pages on one sheet)
             xtraReport.PaperKind = PaperKind.Custom
