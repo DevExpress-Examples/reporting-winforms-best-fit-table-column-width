@@ -1,23 +1,31 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128605372/18.1.12%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T246953)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+# Table Report - How to Adjust the Column Width to Best Fit the Cell Content
+
+This example calculates the column width to display the entire cell content and adjusts the width of the table column in the resulting document.
+
+The code in this example does the following:
+
+- Calls the [XtraReport.CreateDocument](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.CreateDocument) method to create a report document. A document is a collection of document [bricks](https://docs.devexpress.com/WindowsForms/88/Controls-and-Libraries/Printing-Exporting/Concepts/Basic-Terms/Bricks).
+- Iterates through the brick collection to find the maximum text width per column. The `DevExpress.XtraPrinting.Native.NestedBrickIterator` class instance loops through visual bricks, and the [BestSizeEstimator](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.BestSizeEstimator) class methods are used to calculate the text width. 
+- Specifies the [XRTableCell.WidthF](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTableCell.WidthF) property.
+- Re-creates the report document with the new column width.
+
+![Report with Adjusted Column Width to Best Fit Contents](Images/screenshot.png)
+
+## Files to Review
 
 * [Form1.cs](./CS/Form1.cs) (VB: [Form1.vb](./VB/Form1.vb))
 * [Program.cs](./CS/Program.cs) (VB: [Program.vb](./VB/Program.vb))
 * [XtraReport1.cs](./CS/Report/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/Report/XtraReport1.vb))
-* **[ReportHelper.cs](./CS/ReportHelper/ReportHelper.cs) (VB: [ReportHelper.vb](./VB/ReportHelper/ReportHelper.vb))**
-<!-- default file list end -->
-# Table Report - How to resize report columns to best fit cells' content
+* [ReportHelper.cs](./CS/ReportHelper/ReportHelper.cs) (VB: [ReportHelper.vb](./VB/ReportHelper/ReportHelper.vb))
+
+## Documentation
+
+- [XRTable](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTable)
+- [Use Tables](https://docs.devexpress.com/XtraReports/9741/detailed-guide-to-devexpress-reporting/use-report-controls/use-tables)
+- [Hide Table Cells](https://docs.devexpress.com/XtraReports/120028/detailed-guide-to-devexpress-reporting/use-report-controls/use-tables/hide-table-cells)
+- [XRLabel.AutoWidth](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRLabel.AutoWidth)
 
 
-<p>To implement the best fit column functionality for <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTable">XRTable</a>, you should use the following approach. <br /></p>
-<p>Use the <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.CreateDocument">XtraReport.CreateDocument method</a> to create a report document and thus, generate a collection of document <a href="https://docs.devexpress.com/WindowsForms/88/Controls-and-Libraries/Printing-Exporting/Concepts/Basic-Terms/Brickss">bricks</a>. Then iterate through the bricks collection to obtain the maximum text width per column, use BricksIterator to loop through visual bricks and calculate the optimal text width using the <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.BestSizeEstimator">BestSizeEstimator</a> class. <br /></p><p>Eventually, set the <a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTableCell.WidthF">XRTableCell.WidthF</a> property according to the calculation result and recreate the report document.<br /></p>
-<p>See also:<br /><a href="https://www.devexpress.com/Support/Center/p/A2747">How to set the label width so that it is always equal to its text (AutoWidth)</a><br /><a href="https://www.devexpress.com/Support/Center/p/E20053">Customizing row height at runtime to a maximum best fit value</a></p>
+## More Examples
 
-<br/>
-
-
+- [Customizing row height at runtime to a maximum best fit value](https://github.com/DevExpress-Examples/Reporting_customizing-row-height-at-runtime-to-a-maximum-best-fit-value-e20053)
