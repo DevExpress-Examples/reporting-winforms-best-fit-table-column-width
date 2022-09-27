@@ -33,4 +33,6 @@ The code in this example does the following:
 
 ## More Examples
 
-- [Customizing row height at runtime to a maximum best fit value](https://github.com/DevExpress-Examples/Reporting_customizing-row-height-at-runtime-to-a-maximum-best-fit-value-e20053)
+- [Table Report - How to Adjust the Row Height to Best Fit the Cell Content](https://github.com/DevExpress-Examples/reporting-winforms-best-fit-table-row-height)
+
+
