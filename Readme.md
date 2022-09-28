@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128605372/22.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T246953)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
@@ -33,4 +32,6 @@ The code in this example does the following:
 
 ## More Examples
 
-- [Customizing row height at runtime to a maximum best fit value](https://github.com/DevExpress-Examples/Reporting_customizing-row-height-at-runtime-to-a-maximum-best-fit-value-e20053)
+- [Table Report - How to Adjust the Row Height to Best Fit the Cell Content](https://github.com/DevExpress-Examples/reporting-winforms-best-fit-table-row-height)
+
+
