@@ -3,7 +3,7 @@ using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
+using DevExpress.Drawing.Printing;
 using System.Linq;
 
 namespace dxSample {
@@ -22,7 +22,7 @@ namespace dxSample {
             report.CreateDocument();
         }
         private void InitializeReport(XtraReport targetReport) {
-            targetReport.PaperKind = PaperKind.Custom;
+            targetReport.PaperKind = DXPaperKind.Custom;
             targetReport.ReportUnit = ReportUnit.Pixels;
             targetReport.PageWidth = 3000;
             targetReport.RollPaper = true;

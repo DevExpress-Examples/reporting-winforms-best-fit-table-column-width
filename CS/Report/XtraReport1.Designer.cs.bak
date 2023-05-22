@@ -364,7 +364,7 @@
             this.Landscape = true;
             this.PageHeight = 850;
             this.PageWidth = 2000;
-            this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom;
+            this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.paramFirstNameMaxLength,
             this.paramTitleColumnMaxLength});
