@@ -3,14 +3,14 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T246953)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Table Report - How to Adjust the Column Width to Best Fit the Cell Content
+# Reporting for WinForms - How to Adjust the Column Width to Best Fit the Cell Content
 
 This example calculates the column width to display the entire cell content and adjusts the width of the table column in the resulting document.
 
 The code in this example does the following:
 
 - Calls the [XtraReport.CreateDocument](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.CreateDocument) method to create a report document. A document is a collection of document [bricks](https://docs.devexpress.com/WindowsForms/88/Controls-and-Libraries/Printing-Exporting/Concepts/Basic-Terms/Bricks).
-- Iterates through the brick collection to find the maximum text width per column. The `DevExpress.XtraPrinting.Native.NestedBrickIterator` class instance loops through visual bricks, and the [BestSizeEstimator](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.BestSizeEstimator) class methods are used to calculate the text width. 
+- Iterates through the brick collection to find the maximum text width per column. The [BrickSelector](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPrinting.BrickSelector) class instance loops through visual bricks, and the [BestSizeEstimator](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.BestSizeEstimator) class methods are used to calculate the text width. 
 - Specifies the [XRTableCell.WidthF](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRTableCell.WidthF) property.
 - Re-creates the report document with the new column width.
 

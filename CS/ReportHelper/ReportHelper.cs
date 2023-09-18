@@ -1,5 +1,4 @@
 using DevExpress.XtraPrinting;
-using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
@@ -91,13 +90,13 @@ namespace dxSample {
         }
 
         private void FillColumnCellWidthCollection(DevExpress.XtraReports.UI.XtraReport currentReport) {
-            foreach(PSPage page in currentReport.Pages) {
-                NestedBrickIterator iterator = new NestedBrickIterator(page.InnerBricks);
-                while(iterator.MoveNext()) {
-                    if(iterator.CurrentBrick is VisualBrick && ((VisualBrick)iterator.CurrentBrick).BrickOwner is XRTableCell) {
-                        XRTableCell cell = ((VisualBrick)iterator.CurrentBrick).BrickOwner as XRTableCell;
-                        string currentCellText = ((VisualBrick)iterator.CurrentBrick).Text;
-                        float bestCellWidthForProvidedText = BestSizeEstimator.GetBoundsToFitText(currentCellText, ((VisualBrick)iterator.CurrentBrick).Style, currentReport.ReportUnit).Width;
+            foreach(Page page in currentReport.Pages) {
+                IEnumerable<VisualBrick> bricks = BrickSelector.GetBricks(page);
+                foreach (VisualBrick currentBrick in bricks) {
+                    if (currentBrick is VisualBrick && (currentBrick.BrickOwner is XRTableCell)) {
+                        XRTableCell cell = currentBrick.BrickOwner as XRTableCell;
+                        string currentCellText = currentBrick.Text;
+                        float bestCellWidthForProvidedText = BestSizeEstimator.GetBoundsToFitText(currentCellText, currentBrick.Style, currentReport.ReportUnit).Width;
                         if(!cellColumnWidthCollection.ContainsKey(cell)) {
                             cellColumnWidthCollection.Add(cell, bestCellWidthForProvidedText);
                         } else {

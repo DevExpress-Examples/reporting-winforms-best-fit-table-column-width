@@ -1,5 +1,4 @@
 Imports DevExpress.XtraPrinting
-Imports DevExpress.XtraPrinting.Native
 Imports DevExpress.XtraReports.UI
 Imports System
 Imports System.Collections.Generic
@@ -106,13 +105,13 @@ Namespace dxSample
         End Function
 
         Private Sub FillColumnCellWidthCollection(ByVal currentReport As XtraReport)
-            For Each page As PSPage In currentReport.Pages
-                Dim iterator As NestedBrickIterator = New NestedBrickIterator(page.InnerBricks)
-                While iterator.MoveNext()
-                    If TypeOf iterator.CurrentBrick Is VisualBrick AndAlso TypeOf CType(iterator.CurrentBrick, VisualBrick).BrickOwner Is XRTableCell Then
-                        Dim cell As XRTableCell = TryCast(CType(iterator.CurrentBrick, VisualBrick).BrickOwner, XRTableCell)
-                        Dim currentCellText As String = CType(iterator.CurrentBrick, VisualBrick).Text
-                        Dim bestCellWidthForProvidedText As Single = BestSizeEstimator.GetBoundsToFitText(currentCellText, CType(iterator.CurrentBrick, VisualBrick).Style, currentReport.ReportUnit).Width
+            For Each page As Page In currentReport.Pages
+                Dim bricks As IEnumerable(Of VisualBrick) = BrickSelector.GetBricks(page)
+                For Each currentBrick As VisualBrick In bricks
+                    If TypeOf currentBrick Is VisualBrick AndAlso (TypeOf currentBrick.BrickOwner Is XRTableCell) Then
+                        Dim cell As XRTableCell = TryCast(currentBrick.BrickOwner, XRTableCell)
+                        Dim currentCellText As String = currentBrick.Text
+                        Dim bestCellWidthForProvidedText As Single = BestSizeEstimator.GetBoundsToFitText(currentCellText, currentBrick.Style, currentReport.ReportUnit).Width
                         If Not cellColumnWidthCollection.ContainsKey(cell) Then
                             cellColumnWidthCollection.Add(cell, bestCellWidthForProvidedText)
                         Else
@@ -122,8 +121,9 @@ Namespace dxSample
                             End If
                         End If
                     End If
-                End While
-            Next
+                Next currentBrick
+            Next page
+
         End Sub
     End Class
 End Namespace
