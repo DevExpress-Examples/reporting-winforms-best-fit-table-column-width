@@ -121,9 +121,8 @@ Namespace dxSample
                             End If
                         End If
                     End If
-                Next currentBrick
-            Next page
-
+                Next
+            Next
         End Sub
     End Class
 End Namespace
